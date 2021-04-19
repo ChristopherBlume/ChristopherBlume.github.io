@@ -259,6 +259,7 @@ img {
   }
 
   #header-home .header-content {
+    margin-top: 15px;
     padding: 10px;
   }
   #header-home .header-content h1 {
@@ -287,6 +288,12 @@ img {
     font-size: 14px;
   }
 
+  #contact-a {
+    margin-top: 15px;
+  }
+  #contact-a h1 {
+    font-size: 2.1rem;
+  }
   #contact-a .text-fields {
     grid-template-areas: "name" "email" "phone" "subject" "message";
   }
