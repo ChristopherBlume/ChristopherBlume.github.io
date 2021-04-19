@@ -186,7 +186,9 @@ img {
 
 // Footer
 #main-footer {
-  position: sticky;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   background: $dark-color;
   color: #fff;
   height: 5vh;
