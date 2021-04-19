@@ -1,0 +1,90 @@
+@import "./config";
+@import "./util";
+
+// Gener
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: $font-stack;
+  line-height: 1.6;
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: $dark-color;
+}
+
+ul {
+  list-style: none;
+}
+
+h2,
+h3,
+h4 {
+  color: $dark-color;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+// Main Nav
+#main-nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+
+  ul {
+    display: flex;
+  }
+
+  li {
+    padding: 1rem 1.5rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: $dark-color;
+    border-bottom: 3px transparent solid;
+    padding-bottom: 0.5rem;
+    transition: border-color 0.5s;
+
+    &:hover {
+      border-color: $medium-color;
+    }
+
+    &.current {
+      border-color: $main-color;
+    }
+  }
+}
+
+// Header
+#header {
+  // Header Home
+  &-home {
+    height: 50vh;
+    color: $dark-color;
+
+    // Header Content
+    .header-content {
+      text-align: center;
+      padding-top: 15%;
+
+      h1 {
+        font-size: 4rem;
+        line-height: 1.2;
+      }
+
+      #profile-picture {
+        width: 250px;
+        border-radius: 50%;
+      }
+    }
+  }
+}

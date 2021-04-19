@@ -1,0 +1,113 @@
+.container {
+  max-width: 1280px;
+  padding: 0 1.5rem;
+  margin: auto;
+  overflow: hidden;
+}
+
+.lead {
+  color: #adaada;
+  font-size: 1.3rem;
+  line-height: 2.5;
+}
+
+.py-1 {
+  padding: 1rem 0;
+}
+.py-2 {
+  padding: 2rem 0;
+}
+.py-3 {
+  padding: 3rem 0;
+}
+.py-4 {
+  padding: 4rem 0;
+}
+
+.my-1 {
+  margin: 1rem 0;
+}
+.my-2 {
+  margin: 2rem 0;
+}
+.my-3 {
+  margin: 3rem 0;
+}
+.my-4 {
+  margin: 4rem 0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  line-height: 1.6;
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+}
+
+h2,
+h3,
+h4 {
+  color: #333;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+#main-nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+#main-nav ul {
+  display: flex;
+}
+#main-nav li {
+  padding: 1rem 1.5rem;
+}
+#main-nav a {
+  text-decoration: none;
+  color: #333;
+  border-bottom: 3px transparent solid;
+  padding-bottom: 0.5rem;
+  transition: border-color 0.5s;
+}
+#main-nav a:hover {
+  border-color: #ccc;
+}
+#main-nav a.current {
+  border-color: #adaada;
+}
+
+#header-home {
+  height: 50vh;
+  color: #333;
+}
+#header-home .header-content {
+  text-align: center;
+  padding-top: 15%;
+}
+#header-home .header-content h1 {
+  font-size: 4rem;
+  line-height: 1.2;
+}
+#header-home .header-content #profile-picture {
+  width: 250px;
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=main.css.map */
