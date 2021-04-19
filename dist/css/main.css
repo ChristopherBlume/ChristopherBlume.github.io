@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .container {
   max-width: 1280px;
   padding: 0 1.5rem;
@@ -5,8 +6,39 @@
   overflow: hidden;
 }
 
+.btn-dark, .btn-light, .btn-main {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  transition: all 0.5s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-main {
+  color: #333;
+  background: #3d90a2;
+}
+.btn-light {
+  color: #333;
+  background: #f4f4f4;
+}
+.btn-dark {
+  color: #f4f4f4;
+  background: #333;
+}
+
+button[class^=btn-]:hover,
+a[class^=btn-]:hover,
+input[class^=btn-]:hover {
+  background-color: #3d90a2;
+}
+
+.text-center {
+  text-align: center;
+}
+
 .lead {
-  color: #adaada;
+  color: #3d90a2;
   font-size: 1.3rem;
   line-height: 2.5;
 }
@@ -22,6 +54,10 @@
 }
 .py-4 {
   padding: 4rem 0;
+}
+
+.px-1 {
+  padding: 0 1rem;
 }
 
 .my-1 {
@@ -43,7 +79,7 @@
 }
 
 body {
-  font-family: Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 1.6;
   background: #fff;
 }
@@ -68,10 +104,19 @@ img {
   height: auto;
 }
 
+#logo {
+  width: 45px;
+  height: 45px;
+}
+
 #main-nav {
   display: flex;
   justify-content: space-between;
-  padding-top: 1rem;
+  border-radius: 10px;
+  background: linear-gradient(141deg, white, rgba(62, 144, 163, 0.6));
+}
+#main-nav h1 {
+  margin-left: 1rem;
 }
 #main-nav ul {
   display: flex;
@@ -90,24 +135,184 @@ img {
   border-color: #ccc;
 }
 #main-nav a.current {
-  border-color: #adaada;
+  border-color: #3d90a2;
 }
 
 #header-home {
-  height: 50vh;
   color: #333;
 }
 #header-home .header-content {
   text-align: center;
-  padding-top: 15%;
+  padding-top: 10%;
 }
 #header-home .header-content h1 {
-  font-size: 4rem;
+  font-size: 3.2rem;
   line-height: 1.2;
 }
 #header-home .header-content #profile-picture {
   width: 250px;
   border-radius: 50%;
+}
+#header-inner {
+  height: 5.5rem;
+}
+
+#about-me {
+  width: 600px;
+}
+#about-me .center {
+  margin-bottom: 2rem;
+  text-decoration: underline;
+  text-decoration-color: #3d90a2;
+  text-align: center;
+}
+#about-me p {
+  text-align: justify;
+}
+#about-me ul li:before {
+  margin-right: 0.8rem;
+  content: "✓";
+  color: #3d90a2;
+}
+
+#contact-a .text-fields {
+  display: grid;
+  grid-template-areas: "name email" "subject phone" "message message";
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+#contact-a .text-fields .name-input {
+  grid-area: name;
+}
+#contact-a .text-fields .subject-input {
+  grid-area: subject;
+}
+#contact-a .text-fields .email-input {
+  grid-area: email;
+}
+#contact-a .text-fields .phone-input {
+  grid-area: phone;
+}
+#contact-a .text-fields .message-input {
+  grid-area: message;
+  height: 100px;
+}
+#contact-a .text-fields .text-input {
+  padding: 0.5rem 1rem;
+}
+#contact-a button[type=submit] {
+  width: 50%;
+}
+#contact-b .contact-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  text-align: center;
+}
+#contact-c h1 {
+  text-align: center;
+  font-size: 4rem;
+}
+
+#main-footer {
+  position: sticky;
+  background: #333;
+  color: #fff;
+  height: 5vh;
+}
+#main-footer .footer-content {
+  display: flex;
+  justify-content: space-between;
+  height: 5vh;
+  align-items: center;
+}
+#main-footer .footer-content .social .fab {
+  margin-right: 1rem;
+  border: 2px #fff solid;
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  line-height: 15px;
+  text-align: center;
+  padding: 0.5rem;
+}
+#main-footer .footer-content .social .fab:hover {
+  background: #3d90a2;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  #header-home {
+    height: 30rem;
+  }
+  #header-home .header-content {
+    padding-top: 5rem;
+  }
+}
+@media (max-width: 500px) {
+  #main-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  #main-nav li {
+    padding: 1rem;
+  }
+
+  #header-home .header-content {
+    padding: 10px;
+  }
+  #header-home .header-content h1 {
+    font-size: 2.1rem;
+  }
+  #header-home .header-content p {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin: 1rem 0;
+  }
+  #header-home .header-content #profile-picture {
+    width: 200px;
+    height: auto;
+  }
+
+  #about-me {
+    width: 95%;
+    text-align: justify;
+    padding: 10px 0;
+  }
+  #about-me h1 {
+    margin-top: 10px;
+    text-align: center;
+  }
+  #about-me ul {
+    font-size: 14px;
+  }
+
+  #contact-a .text-fields {
+    grid-template-areas: "name" "email" "phone" "subject" "message";
+  }
+  #contact-b div {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px #555 solid;
+  }
+  #contact-b div:last-child {
+    border: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  #contact-c h1 {
+    font-size: 2rem;
+  }
+}
+@media (max-height: 580px) {
+  #header-home .header-content {
+    padding-top: 3rem;
+  }
+}
+@media (max-height: 330px) {
+  #header-home .header-content h1 {
+    font-size: 2rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

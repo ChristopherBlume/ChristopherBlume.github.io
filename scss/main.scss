@@ -1,7 +1,7 @@
-@import "./config";
-@import "./util";
+@import "config";
+@import "util";
 
-// Gener
+// General styles
 * {
   padding: 0;
   margin: 0;
@@ -33,11 +33,27 @@ img {
   height: auto;
 }
 
+// Logo
+#logo {
+  width: 45px;
+  height: 45px;
+}
+
 // Main Nav
+
 #main-nav {
   display: flex;
   justify-content: space-between;
-  padding-top: 1rem;
+  border-radius: 10px;
+  background: linear-gradient(
+    141deg,
+    hsla(330, 0%, 100%, 1),
+    hsla(191, 45%, 44%, 0.6)
+  );
+
+  h1 {
+    margin-left: 1rem;
+  }
 
   ul {
     display: flex;
@@ -68,16 +84,15 @@ img {
 #header {
   // Header Home
   &-home {
-    height: 50vh;
     color: $dark-color;
 
     // Header Content
     .header-content {
       text-align: center;
-      padding-top: 15%;
+      padding-top: 10%;
 
       h1 {
-        font-size: 4rem;
+        font-size: 3.2rem;
         line-height: 1.2;
       }
 
@@ -87,4 +102,117 @@ img {
       }
     }
   }
+  &-inner {
+    height: 5.5rem;
+  }
 }
+
+// About me
+#about-me {
+  width: ($website-width - 680px);
+
+  .center {
+    margin-bottom: 2rem;
+    text-decoration: underline;
+    text-decoration-color: $main-color;
+    text-align: center;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  ul li:before {
+    margin-right: 0.8rem;
+    content: "✓";
+    color: $main-color;
+  }
+}
+
+// Contact Page
+#contact {
+  &-a {
+    .text-fields {
+      display: grid;
+      grid-template-areas: "name email" "subject phone" "message message";
+      gap: 1.2rem;
+      margin-bottom: 1.2rem;
+
+      // Grid Areas
+
+      .name-input {
+        grid-area: name;
+      }
+      .subject-input {
+        grid-area: subject;
+      }
+      .email-input {
+        grid-area: email;
+      }
+      .phone-input {
+        grid-area: phone;
+      }
+      .message-input {
+        grid-area: message;
+        height: 100px;
+      }
+
+      .text-input {
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    button[type="submit"] {
+      width: 50%;
+    }
+  }
+
+  &-b {
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &-c {
+    h1 {
+      text-align: center;
+      font-size: 4rem;
+    }
+  }
+}
+
+// Footer
+#main-footer {
+  position: sticky;
+  background: $dark-color;
+  color: #fff;
+  height: 5vh;
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    height: 5vh;
+    align-items: center;
+
+    .social .fab {
+      margin-right: 1rem;
+      border: 2px #fff solid;
+      border-radius: 50%;
+      height: 15px;
+      width: 15px;
+      line-height: 15px;
+      text-align: center;
+      padding: 0.5rem;
+
+      &:hover {
+        background: $main-color;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@import "media";
