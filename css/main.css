@@ -265,10 +265,10 @@ img {
     padding: 10px;
   }
   #header-home .header-content h1 {
-    font-size: 2.1rem;
+    font-size: 1.8rem;
   }
   #header-home .header-content p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 1.2;
     margin: 1rem 0;
   }
@@ -283,6 +283,7 @@ img {
     padding: 10px 0;
   }
   #about-me h1 {
+    margin-bottom: 0;
     margin-top: 10px;
     text-align: center;
   }
@@ -294,7 +295,12 @@ img {
     margin-top: 15px;
   }
   #contact-a h1 {
-    font-size: 2.1rem;
+    font-size: 1.8rem;
+  }
+  #contact-a p {
+    font-size: 1rem;
+    line-height: 1.2;
+    margin: 1rem 0;
   }
   #contact-a .text-fields {
     grid-template-areas: "name" "email" "phone" "subject" "message";
