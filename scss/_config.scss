@@ -1,5 +1,5 @@
 // Variables
-$website-width: 1280px;
+// $website-width: 1280px;
 
 // Fonts
 $font-stack: "Roboto", sans-serif;
@@ -10,6 +10,8 @@ $main-shade-color: #2a6471;
 $light-color: #f4f4f4;
 $medium-color: #ccc;
 $dark-color: #333;
+
+$overlay-color: rgba(24, 39, 51, 0.85);
 
 // Set Text Color
 @function set-text-color($color) {

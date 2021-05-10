@@ -1,16 +1,24 @@
 @import "config";
 @import "util";
+@import "media";
 
-// General styles
 * {
-  padding: 0;
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
+//  General Styles
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
   font-family: $font-stack;
-  line-height: 1.6;
-  background: #fff;
+}
+
+ul {
+  list-style: none;
 }
 
 a {
@@ -18,192 +26,105 @@ a {
   color: $dark-color;
 }
 
-ul {
-  list-style: none;
+.current {
+  border-bottom: 1px $main-color solid;
 }
-
-h2,
-h3,
-h4 {
-  color: $dark-color;
-}
-
-img {
-  width: 100%;
-  height: auto;
-}
-
-// Logo
-#logo {
-  width: 45px;
-  height: 45px;
-}
-
-// Main Nav
 
 #main-nav {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  border-radius: 10px;
-  background: linear-gradient(
-    141deg,
-    hsla(330, 0%, 100%, 1),
-    hsla(191, 45%, 44%, 0.6)
-  );
+  height: 5rem;
+  background: linear-gradient(141deg, white, #3e90a399);
 
-  h1 {
-    margin-left: 1rem;
+  #logo {
+    width: 65px;
+    height: 65px;
   }
 
-  ul {
+  .ul-flex {
     display: flex;
-  }
+    align-items: center;
 
-  li {
-    padding: 1rem 1.5rem;
-  }
-
-  a {
-    text-decoration: none;
-    color: $dark-color;
-    border-bottom: 3px transparent solid;
-    padding-bottom: 0.5rem;
-    transition: border-color 0.5s;
-
-    &:hover {
-      border-color: $medium-color;
+    li {
+      a {
+        justify-content: center;
+        margin: 0 16px;
+      }
     }
+  }
 
-    &.current {
-      border-color: $main-color;
+  @media (max-width: 600px) {
+    height: 3rem;
+
+    #logo {
+      width: 45px;
+      height: 45px;
+    }
+    a {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+  }
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  #picture {
+    height: 200px;
+    border-radius: 50%;
+  }
+  #skillset {
+    background-color: #3e90a399;
+    color: $dark-color;
+    width: 30%;
+    margin: 20px 0;
+    padding: 15px 0;
+
+    ul {
+      li {
+        text-align: center;
+        margin: 10px 0;
+      }
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    #picture {
+      height: 125px;
+    }
+    #skillset {
+      font-size: 14px;
+      width: 70%;
     }
   }
 }
 
-// Header
-#header {
-  // Header Home
-  &-home {
-    color: $dark-color;
-
-    // Header Content
-    .header-content {
-      text-align: center;
-      padding-top: 10%;
-
-      h1 {
-        font-size: 3.2rem;
-        line-height: 1.2;
-      }
-
-      #profile-picture {
-        width: 250px;
-        border-radius: 50%;
-      }
-    }
-    // About me
-    #about-me {
-      max-width: ($website-width - 680px);
-      margin: 0 auto;
-      padding: 20px 0;
-
-      ul li:before {
-        margin-right: 0.8rem;
-        content: "✓";
-        color: $main-color;
-      }
-    }
-  }
-  &-inner {
-    height: 5.5rem;
-  }
-}
-
-// Footer {
+// Footer
 #main-footer {
-  background-color: $dark-color;
-  height: 5vh;
+  top: 0;
+  background: $dark-color;
   color: #fff;
+  height: 4rem;
 
   .footer-content {
-    width: 90%;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    height: 4rem;
     align-items: center;
-    height: 5vh;
-  }
 
-  .social .fab {
-    margin-right: 1rem;
-    border: 2px #fff solid;
-    border-radius: 50%;
-    height: 20px;
-    width: 20px;
-    line-height: 20px;
-    text-align: center;
-    padding: 0.5rem;
+    .social .fab {
+      // margin-right: 1rem;
+      border-radius: 50%;
 
-    &:hover {
-      cursor: pointer;
-      background: $main-color;
+      &:hover {
+        cursor: pointer;
+        background-color: $main-color;
+      }
     }
   }
 }
-
-// Contact Page
-#contact {
-  &-a {
-    .text-fields {
-      display: grid;
-      grid-template-areas: "name email" "subject phone" "message message";
-      gap: 1.2rem;
-      margin-bottom: 1.2rem;
-
-      // Grid Areas
-
-      .name-input {
-        grid-area: name;
-      }
-      .subject-input {
-        grid-area: subject;
-      }
-      .email-input {
-        grid-area: email;
-      }
-      .phone-input {
-        grid-area: phone;
-      }
-      .message-input {
-        grid-area: message;
-        height: 100px;
-      }
-
-      .text-input {
-        padding: 0.5rem 1rem;
-      }
-    }
-
-    button[type="submit"] {
-      width: 50%;
-    }
-  }
-
-  &-b {
-    .contact-info {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      align-items: center;
-      text-align: center;
-    }
-  }
-
-  &-c {
-    h1 {
-      text-align: center;
-      font-size: 4rem;
-    }
-  }
-}
-
-@import "media";
