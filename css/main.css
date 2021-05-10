@@ -166,6 +166,12 @@ a {
   }
 }
 
+#my-form-status {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+
 form {
   display: flex;
   flex-direction: column;
