@@ -156,6 +156,15 @@ a {
     width: 70%;
   }
 }
+@media only screen and (max-width: 600px) {
+  #content #picture {
+    height: 125px;
+  }
+  #content #skillset {
+    font-size: 14px;
+    width: 70%;
+  }
+}
 
 #main-footer {
   top: 0;
@@ -175,6 +184,11 @@ a {
 #main-footer .footer-content .social .fab:hover {
   cursor: pointer;
   background-color: #3d90a2;
+}
+@media only screen and (max-width: 600px) {
+  #main-footer {
+    font-size: 14px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -105,6 +105,16 @@ a {
       width: 70%;
     }
   }
+
+  @media only screen and (max-width: 600px) {
+    #picture {
+      height: 125px;
+    }
+    #skillset {
+      font-size: 14px;
+      width: 70%;
+    }
+  }
 }
 
 // Footer
@@ -129,5 +139,8 @@ a {
         background-color: $main-color;
       }
     }
+  }
+  @media only screen and (max-width: 600px) {
+    font-size: 14px;
   }
 }
