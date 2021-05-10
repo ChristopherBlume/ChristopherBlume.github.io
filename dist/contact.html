@@ -31,7 +31,8 @@
       </ul>
     </nav>
     <!-- Form -->
-    <form action="contact.php" method="POST" class="form">
+    <p id="my-form-status"></p>
+    <form action="https://formspree.io/f/myylegrq" method="POST" class="form">
       <div class="form-group">
         <label for="name" class="form-label">Your Name</label>
         <input
@@ -94,5 +95,29 @@
         </div>
       </div>
     </footer>
+    <script>
+      const form = document.querySelector(".form");
+      async function handleSubmit(event) {
+        event.preventDefault();
+        const status = document.getElementById("my-form-status");
+        const data = new FormData(event.target);
+        fetch(event.target.action, {
+          method: form.method,
+          body: data,
+          headers: {
+            Accept: "application/json",
+          },
+        })
+          .then((res) => {
+            status.innerHTML = "Message successfully sent!";
+            form.reset();
+          })
+          .catch((err) => {
+            status.innerHTML =
+              "Oops, your Message was not delivered. Please try again";
+          });
+      }
+      form.addEventListener("submit", handleSubmit);
+    </script>
   </body>
 </html>
