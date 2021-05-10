@@ -75,6 +75,9 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  h1 {
+    margin-top: 10px;
+  }
   #picture {
     height: 200px;
     border-radius: 50%;
